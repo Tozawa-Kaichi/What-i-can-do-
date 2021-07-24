@@ -20,6 +20,8 @@ public class ObjectMove : MonoBehaviour
     bool wallsearch = false;
     bool groundsearch = false;
     Vector2 migi = Vector2.right;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,9 +37,12 @@ public class ObjectMove : MonoBehaviour
     {
         Vector2 origin = this.transform.position;
         Vector2 dir = Vector2.zero;
+        Vector2 lscale = gameObject.transform.localScale;
+
 
         if (!groundsearch && !wallsearch)
         {
+            Debug.Log("start");
             Debug.DrawLine(origin, origin + m_rayForWall);
             Debug.DrawLine(origin, origin + m_rayForGround);
             RaycastHit2D hit1 = Physics2D.Raycast(this.transform.position, m_rayForWall, m_rayForWall.magnitude, m_wallLayer);
@@ -45,15 +50,23 @@ public class ObjectMove : MonoBehaviour
             if (!hit1.collider && hit2 && !wallsearch && !groundsearch)
             {
                 dir = Vector2.right * m_moveSpeed;
+                if (lscale.x < 0)
+                {
+                    lscale.x *= -1;
+                }
+                gameObject.transform.localScale = lscale;
             }
             else if (hit1.collider || !hit2.collider)
             {
+                
                 wallsearch = true;
                 groundsearch = true;
+
             }
         }
         else if (groundsearch && wallsearch)
         {
+
             Debug.DrawLine(origin, origin - m_rayForWall);
             Debug.DrawLine(origin, origin + m_rayForGroundreturn);
             RaycastHit2D hit1 = Physics2D.Raycast(this.transform.position, -1 * m_rayForWall, m_rayForWall.magnitude, m_wallLayer);
@@ -61,6 +74,11 @@ public class ObjectMove : MonoBehaviour
             if (!hit1.collider && hit2 && wallsearch && groundsearch)
             {
                 dir = Vector2.left * m_moveSpeed;
+                if (lscale.x > 0)
+                {
+                    lscale.x *= -1;
+                }
+                gameObject.transform.localScale = lscale;
             }
             else if (hit1.collider || !hit2.collider)
             {
@@ -72,4 +90,5 @@ public class ObjectMove : MonoBehaviour
         m_rb.velocity = dir;
 
     }
+    
 }
