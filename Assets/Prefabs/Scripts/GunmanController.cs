@@ -93,6 +93,12 @@ public class GunmanController : MonoBehaviour
         // 足下にトリガーを追加しておくこと。足下のトリガーに地面が接触したら「接地している」とみなす。
         m_isGrounded = true;
         m_jumpCount = 0;
+        if (collision.gameObject.tag == "Enemy")
+        {
+            // 自分自身を破棄する
+            Destroy(this.gameObject);
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -100,4 +106,5 @@ public class GunmanController : MonoBehaviour
         // 足下にトリガーを追加しておくこと。足下のトリガーから地面が離れたら「接地していない」とみなす。
         m_isGrounded = false;
     }
+    
 }

@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1169171144377730295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,6 +190,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyhitpoint: 30
   m_effectPrefab: {fileID: 1030193438872886983, guid: 7f62ae7729f65a142a70aad2c29b42f0,
+    type: 3}
+  m_clonePrefab: {fileID: 1541298249651016178, guid: 76bd1ef2063b80540b79005227703c08,
     type: 3}
 --- !u!1 &1169171145500217155
 GameObject:

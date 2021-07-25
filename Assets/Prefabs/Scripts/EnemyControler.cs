@@ -6,7 +6,9 @@ public class EnemyControler : MonoBehaviour
 {
     [SerializeField]int enemyhitpoint = 50;
     [SerializeField] GameObject m_effectPrefab = default;
+    [SerializeField] GameObject m_clonePrefab = default;
     AudioSource m_audio = default;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,16 @@ public class EnemyControler : MonoBehaviour
                 Instantiate(m_effectPrefab, this.transform.position, this.transform.rotation);
             }
             
+        }
+        if (collision.gameObject.tag == "Niku")
+        {
+            Debug.Log("hit");
+            enemyhitpoint = enemyhitpoint + 30;
+            
+            
+            Instantiate(m_clonePrefab, transform.parent);
+            
+
         }
         if (enemyhitpoint <= 0)
         {
