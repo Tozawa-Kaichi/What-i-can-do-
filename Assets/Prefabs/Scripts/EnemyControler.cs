@@ -35,16 +35,16 @@ public class EnemyControler : MonoBehaviour
             }
             
         }
-        if (collision.gameObject.tag == "Niku")
-        {
-            Debug.Log("hit");
+      
+            Debug.Log("eat");
             enemyhitpoint = enemyhitpoint + 30;
             
             
-            Instantiate(m_clonePrefab, transform.parent);
+            Instantiate(m_clonePrefab, this.transform.parent);
+
             
 
-        }
+        
         if (enemyhitpoint <= 0)
         {
             // 自分自身を破棄する
