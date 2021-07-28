@@ -21,6 +21,7 @@ public class ObjectMove : MonoBehaviour
     bool groundsearch = false;
     Vector2 migi = Vector2.right;
     
+    
 
     // Start is called before the first frame update
     void Start()

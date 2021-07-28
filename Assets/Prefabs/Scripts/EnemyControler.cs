@@ -7,6 +7,7 @@ public class EnemyControler : MonoBehaviour
     [SerializeField]int enemyhitpoint = 50;
     [SerializeField] GameObject m_effectPrefab = default;
     [SerializeField] GameObject m_clonePrefab = default;
+
     AudioSource m_audio = default;
     
     // Start is called before the first frame update
