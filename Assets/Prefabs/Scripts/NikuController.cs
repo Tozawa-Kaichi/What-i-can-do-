@@ -19,6 +19,8 @@ public class NikuController : MonoBehaviour
     bool wallsearch = false;
     bool groundsearch = false;
     Vector2 migi = Vector2.right;
+    [SerializeField] GameObject m_eateffect = default;
+    [SerializeField] AudioClip m_audio = default;
 
 
     void Start()
@@ -170,6 +172,8 @@ public class NikuController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            Instantiate(m_eateffect, this.transform.position, this.transform.rotation);
+            AudioSource.PlayClipAtPoint(m_audio, Camera.main.transform.position);
             // 自分自身を破棄する
             Destroy(this.gameObject);
 

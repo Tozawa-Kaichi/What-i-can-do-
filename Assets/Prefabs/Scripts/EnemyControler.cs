@@ -7,13 +7,14 @@ public class EnemyControler : MonoBehaviour
     [SerializeField]int enemyhitpoint = 50;
     [SerializeField] GameObject m_effectPrefab = default;
     [SerializeField] GameObject m_clonePrefab = default;
+    [SerializeField] GameObject m_eateffect = default;
 
-    AudioSource m_audio = default;
-    
+    [SerializeField] AudioClip m_audio = default;
+
     // Start is called before the first frame update
     void Start()
     {
-        m_audio = GetComponent<AudioSource>();
+        
         
     }
 
@@ -36,12 +37,16 @@ public class EnemyControler : MonoBehaviour
             }
             
         }
-      
+
+        if (collision.gameObject.tag == "Niku")
+        {
             Debug.Log("eat");
             enemyhitpoint = enemyhitpoint + 30;
-            
-            
-            Instantiate(m_clonePrefab, this.transform.parent);
+            Instantiate(m_eateffect, this.transform.position, this.transform.rotation);
+            AudioSource.PlayClipAtPoint(m_audio, Camera.main.transform.position);
+
+
+        }
 
             
 
