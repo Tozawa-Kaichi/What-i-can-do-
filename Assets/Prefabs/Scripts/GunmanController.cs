@@ -26,6 +26,8 @@ public class GunmanController : MonoBehaviour
     bool m_isGrounded = false;
     /// <summary>ジャンプした回数のカウンタ</summary>
     int m_jumpCount;
+
+    List<ItemBase2D> m_itemList = new List<ItemBase2D>();
     void Start()
     {
         m_rb = GetComponent<Rigidbody2D>();
@@ -70,6 +72,10 @@ public class GunmanController : MonoBehaviour
     {
         // 力を加えるのは FixedUpdate で行う
         m_rb.AddForce(Vector2.right * m_h * m_movePower, ForceMode2D.Force);
+    }
+    public void GetItem(ItemBase2D item)
+    {
+        m_itemList.Add(item);
     }
     void FlipX(float horizontal)
     {
