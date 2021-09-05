@@ -31,6 +31,6 @@ public abstract class CharacterBase2D : MonoBehaviour
 
     public void AddLife(int life)
     {
-        m_life += life;
+        m_life =m_life+ life;
     }
 }

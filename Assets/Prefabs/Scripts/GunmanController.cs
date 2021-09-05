@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunmanController : MonoBehaviour
+public class GunmanController : CharacterBase2D
 {
     /// <summary>左右移動する力</summary>
     [SerializeField] float m_movePower = 5f;

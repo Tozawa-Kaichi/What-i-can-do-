@@ -5,7 +5,7 @@ using UnityEngine;
 public class RedDrink : ItemBase2D
 {
     /// <summary>ライフを回復（減少）させる値</summary>
-    [SerializeField] int m_recoverLife = 10;
+    [SerializeField] int m_recoverLife = 30;
     
 
     
