@@ -5,7 +5,7 @@ using UnityEngine;
 public class GunmanController : CharacterBase2D
 {
     /// <summary>左右移動する力</summary>
-    [SerializeField] float m_movePower = 5f;
+    [SerializeField] public float m_movePower = 5f;
     /// <summary>ジャンプする力</summary>
     [SerializeField] float m_jumpPower = 15f;
     // Start is called before the first frame update

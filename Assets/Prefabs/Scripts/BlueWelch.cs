@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueWelch : MonoBehaviour
+public class BlueWelch : ItemBase2D
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float speedup = 10;
+    public override void Activate()
     {
-        
-    }
+        FindObjectOfType<GunmanController>().m_movePower+=speedup;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
+

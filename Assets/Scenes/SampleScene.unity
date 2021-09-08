@@ -1291,7 +1291,7 @@ PrefabInstance:
     - target: {fileID: 5013631592528695888, guid: c1e818636d5041042a3798639ac304ac,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5013631592528695888, guid: c1e818636d5041042a3798639ac304ac,
         type: 3}
@@ -2940,6 +2940,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a4e7a86a13fcfb44a52af5a0f2fd184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_sound: {fileID: 0}
+  m_whenActivated: 0
+  speedup: 10
 --- !u!1001 &8841632919726943767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2960,6 +2963,11 @@ PrefabInstance:
     - target: {fileID: 5287664030244461992, guid: 4d01baa3e0903ce419a411d19b9e9c20,
         type: 3}
       propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8841632919587265522, guid: 4d01baa3e0903ce419a411d19b9e9c20,
+        type: 3}
+      propertyPath: m_maxJumps
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8841632919587265525, guid: 4d01baa3e0903ce419a411d19b9e9c20,
