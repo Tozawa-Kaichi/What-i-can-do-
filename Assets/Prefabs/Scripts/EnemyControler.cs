@@ -10,6 +10,7 @@ public class EnemyControler : MonoBehaviour
     [SerializeField] GameObject m_eateffect = default;
 
     [SerializeField] AudioClip m_audio = default;
+    [SerializeField] GameObject m_DropItem = default;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,7 @@ public class EnemyControler : MonoBehaviour
         
         if (enemyhitpoint <= 0)
         {
+            Instantiate(m_DropItem, this.transform.position, this.transform.rotation);
             // 自分自身を破棄する
             Destroy(this.gameObject);
         }
